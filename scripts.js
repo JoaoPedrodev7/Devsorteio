@@ -1,0 +1,26 @@
+const overlay = document.getElementById("overlay")
+
+function generateNumber() {
+
+    const min = Math.ceil(document.querySelector(".input-min").value)
+    const max = Math.floor(document.querySelector(".input-max").value)
+
+    if(min >= max) {
+        alert("O valor minimo tem que ser MENOR que o valor máximo")
+    } else {
+
+    const result = Math.floor(Math.random() * (max - min + 1)) + min
+
+    document.getElementById("resultado").innerText = "Número Sorteado: " + result
+
+    overlay.style.display = "flex"
+
+}
+
+}
+
+overlay.addEventListener("click", function(event) {
+    if (event.target === overlay) {
+            overlay.style.display = "none"
+    }
+ })
